@@ -7,16 +7,18 @@ public class Test2 {
         int a = scanner.nextInt();
         System.out.println("Enter b: ");
         int b = scanner.nextInt();
-
-        for (int i = Math.min(a,b); i >= 1; i--) {
-            if (a%i==0 && b%i==0) {
-               int c = i;
-            }
-            break;
+int min;
+        if (a < b) {
+            min = a;
+        } else {
+             min = b;
         }
-        int bcnn;
-        bcnn = a*b;
-        System.out.println("BCNN: " + bcnn);
 
+        for (int i = min; i > 0; i--) {
+            if (a%i==0 && b%i==0) {
+               System.out.println("UCLN is: " + i);
+               break;
+            }
+        }
     }
 }
