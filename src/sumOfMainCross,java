@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class sumOfMainCross {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the size of the array");
+        int m = scanner.nextInt();
+
+        int[][] array = new int[m][m];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < m; j++) {
+                System.out.println("Element " + i+j);
+                array[i][j] = scanner.nextInt();
+            }
+        }
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < m; j++) {
+                System.out.print(array[i][j] + "\t");
+            }
+            System.out.println();
+        }
+        sumOfMainCross(array, m, m);
+    }
+    public static void sumOfMainCross(int[][] array, int m, int n) {
+        int sum = 0;
+        for (int i = 0; i< m; i++) {
+            for (int j = 0; j< n; j++) {
+                if (i==j) {
+                    sum += array[i][j];
+                }
+
+            }
+
+        }
+        System.out.println("The sum of main cross is " + sum);
+    }
+}
